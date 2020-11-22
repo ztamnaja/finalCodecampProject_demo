@@ -1,0 +1,651 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+  
+    /* CSS */
+  
+* {
+  box-sizing: border-box;
+}
+
+/* background-color:	#383838; */
+/* color: "##383838" */
+
+.layout {
+  padding: 0px;
+  width: 100%;
+
+}
+
+.hero-image {
+  background: url("/img/header3.jpg");
+  width: 115%;
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.9;
+}
+.headerForm {
+  margin: 20px;
+  width:100%;
+  max-width: 100%;
+  position: relative;
+  /* text-align: center; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.headerText {
+  margin: 20px;
+  max-width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.headerText h1 {
+  color: white;
+  text-align: center;
+  margin: 20px;
+  /* background-color: black; */
+  font-size:300%;
+  letter-spacing: 5px;
+}
+.headerText p {
+  color: white;
+  text-align: center;
+  margin: 20px;
+  /* background-color: black; */
+  font-size:100%;
+  letter-spacing: 3.5px;
+}
+.context {
+  margin: 0px;
+  max-width: 100%;
+  position: absolute;
+  /* text-align: center; */
+  top: 350%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+}
+.context h2 {
+  color: #383838;
+  text-align: center;
+  margin: 50px;
+  /* background-color: black; */
+  font-size:45px;
+  letter-spacing: 4px;
+}
+
+.context img{
+  /* position: absolute; */
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  line-height: 10px;
+} 
+.context h3  {
+  padding: 50px;
+  height: 50px;
+  color: black;
+  line-height: 10px;
+  text-align: center;
+  /* background-color: transparent; */
+  /* background-color:  #364d79; */
+};
+
+.context2 {
+  margin: 20px;
+  max-width: 1000px;
+  position: absolute;
+  /* text-align: center; */
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* padding: 0px; */
+}
+.context_center {
+  text-align: center;
+  color: #E0E0E0;
+  min-height: 650%;
+  background-color: #383838;
+  display: block;
+  width: 100%;
+  letter-spacing: 4
+}
+span.b {
+  /* transform: rotate(-8deg); */
+  position: relative;
+  display: inline-block;
+  line-height: 250px;
+  margin: 40px;
+  width: 300px;
+  height: 300px;
+  padding: 5px;
+  border: 10px solid 	#E0E0E0;    
+  background-color:	#383838;
+  text-align:center;
+  font-size:18px;
+}
+
+Footer {
+  margin: 0px;
+  /* line-height: 100px; */
+  max-width: 100%;
+  background-color:	#383838;
+  position: relative;
+  text-align: center;
+  top: 3100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+}
+
+Footer h3  {
+  padding: 20px;
+  height: 20px;
+  color: #E0E0E0;
+  line-height: 5px;
+  text-align: center;
+  /* background-color: transparent; */
+  /* background-color:  #364d79; */
+};
+
+
+}
+
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  
+  /* CSS */
+  
+* {
+  box-sizing: border-box;
+}
+
+/* background-color:	#383838; */
+/* color: "##383838" */
+
+.layout {
+  padding: 0px;
+  width: 100%;
+
+}
+
+.site-layout-content {
+  min-height: 280px;
+  padding: 0px;
+  background: #fff;
+}
+
+.hero-image {
+  background: url("/img/header3.jpg");
+  width: 100%;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.9;
+}
+.headerForm {
+  margin: 20px;
+  max-width: 100%;
+  position: relative;
+  /* text-align: center; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.headerText {
+  margin: 20px;
+  max-width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.headerText h1 {
+  color: white;
+  text-align: center;
+  margin: 10px;
+  /* background-color: black; */
+  font-size:200%;
+  letter-spacing: 3px;
+}
+.headerText p {
+  color: white;
+  text-align: center;
+  margin: 20px;
+  /* background-color: black; */
+  font-size:75%;
+  letter-spacing: 1.5px;
+}
+.context {
+  margin: 0px;
+  max-width: 100%;
+  position: absolute;
+  /* text-align: center; */
+  top: 320%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+}
+.context h2 {
+  color: #383838;
+  text-align: center;
+  margin: 50px;
+  /* background-color: black; */
+  font-size:45px;
+  letter-spacing: 4px;
+}
+
+.context img{
+  /* position: absolute; */
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  line-height: 10px;
+} 
+.context h3  {
+  padding: 50px;
+  height: 50px;
+  color: black;
+  line-height: 10px;
+  text-align: center;
+  /* background-color: transparent; */
+  /* background-color:  #364d79; */
+};
+
+.context2 {
+  margin: 20px;
+  max-width: 1000px;
+  position: absolute;
+  /* text-align: center; */
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* padding: 0px; */
+}
+.context_center {
+  text-align: center;
+  color: #E0E0E0;
+  min-height: 650%;
+  background-color: #383838;
+  display: block;
+  width: 100%;
+  letter-spacing: 4
+}
+span.b {
+  /* transform: rotate(-8deg); */
+  position: relative;
+  display: inline-block;
+  line-height: 1800%;
+  margin: 30px;
+  width: 20%;
+  height: 20%;
+  padding: 5px;
+  border: 10px solid 	#E0E0E0;    
+  background-color:	#383838;
+  text-align:center;
+  font-size:10px;
+}
+
+Footer {
+  margin: 0px;
+  /* line-height: 100px; */
+  max-width: 100%;
+  background-color:	#383838;
+  position: relative;
+  text-align: center;
+  top: 450%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+}
+
+Footer h3  {
+  padding: 20px;
+  height: 20px;
+  color: #E0E0E0;
+  line-height: 5px;
+  text-align: center;
+  /* background-color: transparent; */
+  /* background-color:  #364d79; */
+};
+
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 481px) and (max-width: 768px) {
+  
+  /* CSS */
+  
+* {
+  box-sizing: border-box;
+}
+
+/* background-color:	#383838; */
+/* color: "##383838" */
+
+
+.hero-image {
+  background: url("/img/header3.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.85;
+}
+
+.headerForm {
+  margin: 20px;
+  max-width: 100%;
+  position: relative;
+  /* text-align: center; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.headerText {
+  margin: 20px;
+  max-width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.headerText h1 {
+  color: white;
+  text-align: center;
+  margin: 20px;
+  /* background-color: black; */
+  font-size:150%;
+  letter-spacing: 1px;
+}
+.headerText p {
+  color: white;
+  text-align: center;
+  margin: 20px;
+  /* background-color: black; */
+  font-size:50%;
+  letter-spacing: 1px;
+}
+.context {
+  margin: 0px;
+  max-width: 100%;
+  position: absolute;
+  /* text-align: center; */
+  top: 300%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+}
+.context h2 {
+  color: #383838;
+  text-align: center;
+  margin: 50px;
+  /* background-color: black; */
+  font-size:20px;
+  letter-spacing: 4px;
+}
+
+.context img{
+  /* position: absolute; */
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  line-height: 10px;
+} 
+.context h3  {
+  padding: 50px;
+  height: 50px;
+  color: black;
+  line-height: 10px;
+  text-align: center;
+  /* background-color: transparent; */
+  /* background-color:  #364d79; */
+};
+
+.context2 {
+  margin: 20px;
+  max-width: 100%;
+  position: absolute;
+  /* text-align: center; */
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* padding: 0px; */
+}
+.context_center {
+  text-align: center;
+  color: #E0E0E0;
+  min-height: 650%;
+  background-color: #383838;
+  display: block;
+  width: 100%;
+  letter-spacing: 4
+}
+span.b {
+  /* transform: rotate(-8deg); */
+  position: relative;
+  display: inline-block;
+  line-height: 1500%;
+  margin: 20px;
+  width: 20%;
+  height: 10%;
+  padding: 5px;
+  border: 10px solid 	#E0E0E0;    
+  background-color:	#383838;
+  text-align:center;
+  font-size:5px;
+}
+
+Footer {
+  margin: 0px;
+  /* line-height: 100px; */
+  max-width: 400%;
+  background-color:	#383838;
+  position: relative;
+  text-align: center;
+  top: 420%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+}
+
+Footer h3  {
+  padding: 20px;
+  height: 20px;
+  color: #E0E0E0;
+  line-height: 5px;
+  text-align: center;
+  /* background-color: transparent; */
+  /* background-color:  #364d79; */
+};
+
+  
+}
+  
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  /* CSS */
+  
+ 
+* {
+  box-sizing: border-box;
+}
+
+/* background-color:	#383838; */
+/* color: "##383838" */
+
+
+.hero-image {
+  background: url("/img/header3.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.85;
+}
+
+.headerForm {
+  margin: 20px;
+  max-width: 100%;
+  position: relative;
+  /* text-align: center; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.headerText {
+  margin: 10px;
+  max-width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.headerText h1 {
+  color: white;
+  text-align: center;
+  margin: 20px;
+  /* background-color: black; */
+  font-size:110%;
+  letter-spacing: 1px;
+}
+.headerText p {
+  color: white;
+  text-align: center;
+  margin: 20px;
+  /* background-color: black; */
+  font-size:80%;
+  letter-spacing: 2.2px;
+}
+.context {
+  margin: 0px;
+  max-width: 100%;
+  position: absolute;
+  /* text-align: center; */
+  top: 300%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+}
+.context h2 {
+  color: #383838;
+  text-align: center;
+  margin: 50px;
+  /* background-color: black; */
+  font-size:20px;
+  letter-spacing: 4px;
+}
+
+.context img{
+  /* position: absolute; */
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  line-height: 10px;
+} 
+.context h3  {
+  padding: 50px;
+  height: 50px;
+  color: black;
+  line-height: 10px;
+  text-align: center;
+  /* background-color: transparent; */
+  /* background-color:  #364d79; */
+};
+
+.context2 {
+  margin: 20px;
+  max-width: 100%;
+  position: absolute;
+  /* text-align: center; */
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* padding: 0px; */
+}
+.context_center {
+  text-align: center;
+  color: #E0E0E0;
+  min-height: 650%;
+  background-color: #383838;
+  display: block;
+  width: 100%;
+  letter-spacing: 4
+}
+span.b {
+  /* transform: rotate(-8deg); */
+  position: relative;
+  display: inline-block;
+  line-height: 1500%;
+  margin: 20px;
+  width: 20%;
+  height: 20%;
+  padding: 2px;
+  border: 5px solid 	#E0E0E0;    
+  background-color:	#383838;
+  text-align:center;
+  font-size:4px;
+}
+
+Footer {
+  margin: 0px;
+  /* line-height: 100px; */
+  max-width: 2000px;
+  background-color:	#383838;
+  position: relative;
+  text-align: center;
+  top: 400%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+}
+
+Footer h3  {
+  padding: 20px;
+  height: 20px;
+  color: #E0E0E0;
+  line-height: 5px;
+  text-align: center;
+  /* background-color: transparent; */
+  /* background-color:  #364d79; */
+};
+  
+}
+
+
+

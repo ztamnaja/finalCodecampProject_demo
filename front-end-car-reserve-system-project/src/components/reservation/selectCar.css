@@ -1,0 +1,22 @@
+.selectCarForm {
+  margin: 20px auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.selectCarIcon {
+  height: 300px;
+  font-size: 24px;
+}
+
+.eachElement {
+  text-align: center;
+}
+.demo-loadmore-list {
+  min-height: 350px;
+}
+.divisionLine {
+  border-left: 1px solid #e6e6e6;
+  height: 30px;
+}

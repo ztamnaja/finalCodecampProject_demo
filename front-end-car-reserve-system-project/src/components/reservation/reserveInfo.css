@@ -1,0 +1,52 @@
+.reserveInfo {
+  margin: 20px auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.reserveInfo form textarea {
+  height: 300px;
+  font-size: 24px;
+}
+
+.eachElement {
+  text-align: right;
+}
+.demo-loadmore-list {
+  width: 100%;
+  text-align: center;
+}
+.divisionLine {
+  border-left: 1px solid #e6e6e6;
+  height: 30px;
+}
+.divisionLineHor {
+  text-align: center;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #e6e6e6;
+  margin: 1em 0;
+  padding: 0;
+}
+.clearfix {
+  overflow: auto;
+}
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  float: left;
+}
+.divisionLineHor p {
+  vertical-align: middle;
+  line-height: 1.5;
+  display: inline-block;
+}
+.divisionLineHor h2 {
+  vertical-align: middle;
+  line-height: 1.5;
+  display: inline-block;
+}
