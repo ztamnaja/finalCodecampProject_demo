@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
 import { Select, Steps } from "antd";
-
+import "./reserveCar.css";
 const { Step } = Steps;
 export default function StepOne() {
   return (

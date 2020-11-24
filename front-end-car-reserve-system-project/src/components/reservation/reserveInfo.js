@@ -18,37 +18,50 @@ class ReserveInfo extends Component {
     };
   }
   async componentDidMount() {
-    const pickup_locationName = localStorage.getItem("pickup_locationName");
+    const pickupLocationId = localStorage.getItem("pickup_locationName");
     const pickup_Date = localStorage.getItem("pickup_Date");
     const pickup_Time = localStorage.getItem("pickup_Time");
-    const return_locationName = localStorage.getItem("return_locationName");
+    const returnLocationId = localStorage.getItem("return_locationName");
     const return_Date = localStorage.getItem("return_Date");
     const return_Time = localStorage.getItem("return_Time");
     const carId = localStorage.getItem("carId");
 
     //get items from mysql>>
     const httpResponse = await axios.get(`http://localhost:8000/car/${carId}`);
-    console.log("car selected:", httpResponse.data);
-    
+    const pickupLocationName = await axios.get(
+      `http://localhost:8000/location/${pickupLocationId}`
+    );
+    const returnLocationName = await axios.get(
+      `http://localhost:8000/location/${pickupLocationId}`
+    );
+
     // re format duration date time
-    let pickup_DateTime = moment(pickup_Date + ' ' + pickup_Time, 'DD/MM/YYYY HH:mm') //12-10-2020T11:13
-    let return_DateTime = moment(return_Date + ' ' + return_Time,'DD/MM/YYYY HH:mm') //12-10-2020T11:13
+    let pickup_DateTime = moment(
+      pickup_Date + " " + pickup_Time,
+      "DD/MM/YYYY HH:mm"
+    ); //12-10-2020T11:13
+    let return_DateTime = moment(
+      return_Date + " " + return_Time,
+      "DD/MM/YYYY HH:mm"
+    ); //12-10-2020T11:13
     let durationDiff = moment.duration(return_DateTime.diff(pickup_DateTime));
     // console.log('duration', durationDiff);
-    let duration = durationDiff.asDays(); // using in 
-    console.log('duration',duration);
-    
-    // calcution estimatedExtra 
-    let extra = 0 // 7% not sure
-    let total = (duration * httpResponse.data.carPrice) + extra
-    let vat = (total*7)/100
-    let estimatedTotal = total + vat
-    console.log('vat',vat);
- 
+    let duration = durationDiff.asDays(); // using in
+    console.log("duration", duration);
+
+    // calcution estimatedExtra
+    let extra = 0; // 7% not sure
+    let total = duration * httpResponse.data.carPrice + extra;
+    let vat = (total * 7) / 100;
+    let estimatedTotal = total + vat;
+    console.log("vat", vat);
+
     this.setState({
       List: httpResponse.data,
-      pickupLocationId: pickup_locationName,
-      returnLocationId: return_locationName,
+      pickupLocationId: pickupLocationId,
+      pickupLocationName: pickupLocationName.data.locationName,
+      returnLocationId: returnLocationId,
+      returnLocationName: returnLocationName.data.locationName,
       pickupDate: pickup_Date,
       pickupTime: pickup_Time,
       returnDate: return_Date,
@@ -63,9 +76,9 @@ class ReserveInfo extends Component {
       duration: duration,
       days: durationDiff._data.days,
       hours: durationDiff._data.hours,
-      minutes: durationDiff._data.minutes
+      minutes: durationDiff._data.minutes,
     });
-    console.log('carSelected', this.state.carSelected);
+    console.log("carSelected", this.state.carSelected);
   }
 
   handleSubmit = async(event) => {
@@ -103,61 +116,76 @@ class ReserveInfo extends Component {
     return (
       <div>
         <Navbar />
-      <div className="reserveInfo">
-        <Steps size="small" progressDot current={2}>
-          <Step title="RESERVE A CAR" />
-          <Step title="SELECT A CAR" />
-          <Step title="YOUR INFOMATION" />
-        </Steps>
-        <div id="reservationInfo">
-          <Descriptions size="small" column={2}>
-            <div>
-              Pick-up Location: {this.state.pickup_locationName}
-              <br />
-              Pick-up Date: {this.state.pickup_Date}
-              <br />
-              Pick-up Time: {this.state.pickup_Time}
-              <br />
-            </div>
-            <div className="divisionLine">
-              Return Location: {this.state.return_locationName}
-              <br />
-              Return Date: {this.state.return_Date}
-              <br />
-              Return Time: {this.state.return_Time}
-              <br />
-            </div>
-          </Descriptions>
-        </div>
-       
-        <div className="divisionLineHor">
-          <p><br /><br /><b>{this.state.carSelected.carName}</b><br />{this.state.carSelected.carBrandName}  </p>
-          <div className="img">
-            <img
-            width={200}
-            alt="carSamplePic"
-            src="https://www.autoduqaan.com/images/no-image-big.jpg"
-            />
+        <div className="reserveInfo">
+          <Steps size="small" progressDot current={2}>
+            <Step title="RESERVE A CAR" />
+            <Step title="SELECT A CAR" />
+            <Step title="YOUR INFOMATION" />
+          </Steps>
+          <div id="reservationInfo">
+            <Descriptions size="small" column={2}>
+              <div>
+                Pick-up Location:&ensp;{this.state.pickupLocationName}
+                <br />
+                Pick-up Date:&ensp;{this.state.pickupDate}
+                <br />
+                Pick-up Time:&ensp;{this.state.pickupTime}
+                <br />
+              </div>
+              <div className="divisionLine">
+                Return Location:&ensp;{this.state.returnLocationName}
+                <br />
+                Return Date:&ensp;{this.state.returnDate}
+                <br />
+                Return Time:&ensp;{this.state.returnTime}
+                <br />
+              </div>
+            </Descriptions>
           </div>
-        </div>
-       
-        <div className="eachElement">
-          <Divider orientation="center" >
-            Reservation Info
-          </Divider>
-          <Descriptions size="small" column={1}  layout="horizontal">
-            <Descriptions.Item label="Rental Duration">{`${this.state.days} Day(s) ${this.state.hours} Hour(s) ${this.state.minutes} Minute(s)`}</Descriptions.Item>
-            <Descriptions.Item label="Base Rate">฿{this.state.baseRate}</Descriptions.Item>
-            <Descriptions.Item label="Extra">฿{this.state.extra}</Descriptions.Item>
-            <Descriptions.Item label="VAT">฿{this.state.vat}</Descriptions.Item>
-            <Descriptions.Item label="Estimated Total">฿{this.state.estimatedTotal}</Descriptions.Item>
+
+          <div className="divisionLineHor">
+            <p>
+              <br />
+              <br />
+              <b>{this.state.carSelected.carName}</b>
+              <br />
+              {this.state.carSelected.carBrandName}{" "}
+            </p>
+            <div className="img">
+              <img
+                width={200}
+                alt="carSamplePic"
+                src="https://www.autoduqaan.com/images/no-image-big.jpg"
+              />
+            </div>
+          </div>
+          <Divider orientation="center">Reservation Info</Divider>
+          {/* <div className="reserveInfo"> */}
+          <Descriptions size="small" column={1} layout="horizontal">
+            <Descriptions.Item label="Rental Duration">
+              &ensp;
+              {`${this.state.days} Day(s) ${this.state.hours} Hour(s) ${this.state.minutes} Minute(s)`}
+            </Descriptions.Item>
+            <Descriptions.Item label="Base Rate">
+              &ensp;฿{this.state.baseRate}
+            </Descriptions.Item>
+            <Descriptions.Item label="Extra">
+              &ensp;฿{this.state.extra}
+            </Descriptions.Item>
+            <Descriptions.Item label="VAT">
+              &ensp;฿{this.state.vat}
+            </Descriptions.Item>
+            <Descriptions.Item label="Estimated Total">
+              &ensp;฿{this.state.estimatedTotal}
+            </Descriptions.Item>
           </Descriptions>
+
           <br />
-          <div>
+          <div className="eachElement">
             <Button onClick={this.handleSubmit}>SUMMIT</Button>
           </div>
+          {/* </div> */}
         </div>
-      </div>
       </div>
     );
   }

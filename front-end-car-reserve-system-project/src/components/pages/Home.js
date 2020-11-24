@@ -45,7 +45,7 @@ export default class Home extends Component {
             </div>
           </div>
           {/* <Content style={{ padding: "0 0px" }}> */}
-            <Content className="site-layout-content">
+          <Content>
             <div className="context">
               <h2>Our Car Models</h2>
               {/* {this.state.ListCar.map((car) => {

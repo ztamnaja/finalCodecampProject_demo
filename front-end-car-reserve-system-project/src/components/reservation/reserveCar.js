@@ -150,8 +150,10 @@ class ReserveCar extends Component {
       <div>
         {/* <Row justify="center">
           <Col xs={23} sm={23} md={23} lg={14} xl={14} xxl={12}> */}
-            <Navbar />
+        <Navbar />
+        <div className="reserveInfo">
             <StepOne />
+        </div>
             <ReserveCarFunc />
             <Footer style={{ background: "#383838", top: "715px" }}>
               <div>

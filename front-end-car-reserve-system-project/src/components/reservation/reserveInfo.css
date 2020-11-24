@@ -1,7 +1,7 @@
 .reserveInfo {
   margin: 20px auto;
   width: 50%;
-  text-align: center;
+  text-align: left;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -11,7 +11,8 @@
 }
 
 .eachElement {
-  text-align: right;
+  text-align: left;
+  
 }
 .demo-loadmore-list {
   width: 100%;

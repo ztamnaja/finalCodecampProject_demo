@@ -10,6 +10,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### visit on github
 ...
 
+### run seed data for initial car and location items
+http://localhost:3000/seeddata
+so, componentDidMount put data auto.
 
 ### Bugs review
 
@@ -18,6 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 3. database relationship should be update. (car-location)
 4. should validate all params when using.
 5. clean up code.
+6. responsive web page not completed.
 
 
 ### not available features.

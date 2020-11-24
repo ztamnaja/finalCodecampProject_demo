@@ -7,6 +7,7 @@ import Reservation from "../components/pages/Reservation";
 import SelectCar from "../components/pages/SelectCar";
 import Reserveinfo from "../components/pages/ReserveInfo";
 import Sucessful from "../components/reservation/sucessful";
+import SeedData from "../components/SeedData/initialItems";
 
 const components = {
   login: {
@@ -45,6 +46,10 @@ const components = {
     url: "/reservation/sucessful",
     component: Sucessful,
   },
+  seedData: {
+    url: "/seeddata",
+    component: SeedData,
+  },
 };
 
 // Role permission
@@ -60,6 +65,7 @@ export default {
       components.selectCar,
       components.reserveInfo,
       components.sucessful,
+      components.seedData,
     ],
     redirectionRoutes: "/reservation",
   },

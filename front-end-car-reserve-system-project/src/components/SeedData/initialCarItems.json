@@ -1,0 +1,38 @@
+[
+  {
+    "carId": "car1",
+    "carName": "carName1",
+    "carBrandName": "carBrandName1",
+    "carPrice": 1234.56,
+    "carInfoDoor": 4,
+    "carInfoSeat": 5,
+    "carInfoBags": 3,
+    "carInfoGear": "auto",
+    "carInfoAC": "AC",
+    "carInfoRadio": "yes"
+  },
+  {
+    "carId": "car2",
+    "carName": "carName2",
+    "carBrandName": "carBrandName2",
+    "carPrice": 2345.67,
+    "carInfoDoor": 4,
+    "carInfoSeat": 5,
+    "carInfoBags": 3,
+    "carInfoGear": "auto",
+    "carInfoAC": "AC",
+    "carInfoRadio": "yes"
+  },
+  {
+    "carId": "car3",
+    "carName": "carName3",
+    "carBrandName": "carBrandName3",
+    "carPrice": 3456.78,
+    "carInfoDoor": 6,
+    "carInfoSeat": 8,
+    "carInfoBags": 5,
+    "carInfoGear": "auto",
+    "carInfoAC": "AC",
+    "carInfoRadio": "yes"
+  }
+]
