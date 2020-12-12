@@ -34,6 +34,13 @@ export default class carModels extends Component {
   render() {
     return (
       <div>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          media="screen"
+          href="style.css"
+        />
+
         <Navbar />
         <div className="carmodelform">
           <List
@@ -41,55 +48,61 @@ export default class carModels extends Component {
             grid={{ gutter: 16, column: 4 }}
             dataSource={this.state.ListCar}
             renderItem={(item) => (
-              <List.Item>
-                <Card
-                  hoverable
-                  style={{ width: 300 }}
-                  cover={
-                    <img
-                      width={200}
-                      alt="carSamplePic"
-                      src="https://www.autoduqaan.com/images/no-image-big.jpg"
-                    />
-                  }
-                  actions={[]}
-                >
-                  <Meta title={item.carName} description={item.carBrandName} />
-                  <Collapse
-                    ghost
-                    isShowmore={this.state.isShowMore}
-                    onChange={this.showMore}
-                  >
-                    <Panel showArrow={false} header="Show More..." key="1">
-                      <p>
-                        <ExportOutlined />
-                        Door: {item.carInfoDoor}{" "}
-                      </p>
+              <div className="containerCar">
+                <div className="card">
+                  <div className="face face1">
+                    <div className="content">
+                      <div className="icon">
+                        <img
+                          width={300}
+                          alt="carSamplePic"
+                          // src="https://www.tqm.co.th/gallery/3976.jpg"
+                          src={item.carImgSrc}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="face face2">
+                    <div className="content">
+                      <h3>
+                        <Meta description={item.carName} />
+                      </h3>
+                      <div id="main">
+                        <p>
+                          <ExportOutlined />
+                          <div>{item.carInfoDoor} </div>
+                        </p>
 
-                      <p>
-                        <UserOutlined />
-                        Seat: {item.carInfoSeat}
-                      </p>
-                      <p>
-                        <ShoppingFilled />
-                        Bag: {item.carInfoBags}
-                      </p>
-                      <p>
-                        <SettingFilled />
-                        Gear: {item.carInfoGear}
-                      </p>
-                      <p>
-                        <ToolFilled />
-                        AC: {item.carInfoAC}
-                      </p>
-                      <p>
-                        <SoundFilled />
-                        Radio: {item.carInfoRadio}
-                      </p>
-                    </Panel>
-                  </Collapse>
-                </Card>
-              </List.Item>
+                        <p>
+                          <UserOutlined />
+                          {/* Seat: {item.carInfoSeat} */}
+                          <div>{item.carInfoSeat}</div>
+                        </p>
+                        <p>
+                          <ShoppingFilled />
+                          {/* Bag: {item.carInfoBags} */}
+                          <div>{item.carInfoBags}</div>
+                        </p>
+                        <p>
+                          <SettingFilled />
+                          {/* Gear: {item.carInfoGear} */}
+                          <div>{item.carInfoGear}</div>
+                        </p>
+                        <p>
+                          <ToolFilled />
+                          {/* AC: {item.carInfoAC} */}
+                          <div>{item.carInfoAC}</div>
+                        </p>
+                        <p>
+                          <SoundFilled />
+                          {/* Radio: {item.carInfoRadio} */}
+                          <div>{item.carInfoRadio}</div>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
           />
         </div>

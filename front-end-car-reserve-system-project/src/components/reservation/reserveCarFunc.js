@@ -112,30 +112,40 @@ class ReserveCarFunc extends Component {
     localStorage.setItem("return_locationName", this.state.return_locationName);
     localStorage.setItem("return_Date", this.state.return_Date);
     localStorage.setItem("return_Time", this.state.return_Time);
-    this.props.history.push("/reservation/selectcar");
-    //   //validate all params before seding change page route
-    //   let localStorageItems = [
-    //     "pickup_locationName",
-    //     "pickup_Date",
-    //     "pickup_Time",
-    //     "return_locationName",
-    //     "return_Date",
-    //     "return_Time",
-    //   ];
-    //   let validatePass = "failed";
-    //   for (const item of localStorageItems) {
-    //     console.log("item", item);
-    //     console.log("localStorage.setItem(item)", localStorage.setItem(item));
-    //     // if item is undefind or falsy
-    //     if (!localStorage.setItem(item)) {
-    //       console.error(`plaese choose your ${item}`);
-    //       notification.error({ message: `plaese choose your ${item}` });
-    //     }
-    //     validatePass = "pass";
-    //   }
-    //   if (validatePass == "pass") {
-    //     this.props.history.push("/reservation/selectcar");
-    //   }
+    // this.props.history.push("/reservation/selectcar");
+
+    //validate all params before seding change page route
+    let localStorageItems = [
+      "pickup_locationName",
+      "pickup_Date",
+      "pickup_Time",
+      "return_locationName",
+      "return_Date",
+      "return_Time",
+    ];
+    let validatePass = "failed";
+    for (const item of localStorageItems) {
+      console.log("item", item);
+      console.log("localStorage.getItem(item)", localStorage.getItem(item));
+      var pickupDate = moment(this.state.pickup_Date, "DD/MM/YYYY");
+      var returnDate = moment(this.state.return_Date, "DD/MM/YYYY");
+
+      // if item is undefind or falsy
+      if (!localStorage.getItem(item)) {
+        console.error(`plaese choose your ${item}`);
+        notification.error({ message: `plaese choose your ${item}` });
+        validatePass = "failed";
+      } else if (!pickupDate.isAfter(returnDate)) {
+        validatePass = "pass";
+      } else {
+        notification.error({ message: `cannot return backward pickup date!` });
+        validatePass = "failed";
+      }
+    }
+    console.log("validatePass", validatePass);
+    if (validatePass == "pass") {
+      this.props.history.push("/reservation/selectcar");
+    }
   };
 
   render() {
@@ -143,11 +153,7 @@ class ReserveCarFunc extends Component {
       <div>
         <Form>
           <div className="InputForm">
-            <Input.Group
-              
-              className="InputElement"
-              compact
-            >
+            <Input.Group className="InputElement" compact>
               <Select
                 value={this.state.pickup_locationName}
                 style={{ width: "50%" }}
@@ -210,7 +216,7 @@ class ReserveCarFunc extends Component {
               />
             </Input.Group>
 
-            <button className="Button" onClick={this.handleSubmit}>
+            <button className="button1" onClick={this.handleSubmit}>
               SELECT A CAR
             </button>
           </div>

@@ -8,8 +8,9 @@ import { Select, Carousel, Layout, Menu } from "antd";
 import ReserveCarFunc from "../reservation/reserveCarFunc";
 import Location from "./Location";
 import Navbar from "./navbar";
+import Footer from "./Footer";
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 const { Option } = Select;
 
 export default class Home extends Component {
@@ -27,6 +28,16 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <link
+          rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+        ></link>
+        <link
+          href="http://fonts.googleapis.com/css?family=Cookie"
+          rel="stylesheet"
+          type="text/css"
+        ></link>
+        <link rel="stylesheet" href="style.css"></link>
         <Layout className="layout">
           {/* <Navbar style={{width: '125%'}}/> */}
           <div
@@ -66,7 +77,7 @@ export default class Home extends Component {
                   <img
                     width={250}
                     alt="compactCar"
-                    src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/13130/2020-Chevrolet-Bolt%20EV-front_13130_032_2400x1800_GAZ.png  "
+                    src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/13130/2020-Chevrolet-Bolt%20EV-front_13130_032_2400x1800_GAZ.png"
                   />
                   <h3>Compact car</h3>
                 </div>
@@ -96,33 +107,43 @@ export default class Home extends Component {
                 </div>
               </Carousel>
               <div className="context_center">
-                <h2
-                  style={{
-                    color: "#E0E0E0",
-                    letterSpacing: 4,
-                  }}
-                >
-                  <br />
-                  Why Choose Us?
-                </h2>
-                <span className="b">High-quality Services</span>
-                <span className="b">Variable of Locations</span>
-                <span className="b">Professionals</span>
+                <div className="container">
+                  <div className="items">
+                    <div className="icon-wrapper">
+                      <i className="fa fa-shield"></i>
+                    </div>
+                    <div className="project-name">
+                      <p>HIGH-QUALITY SERVICES</p>
+                    </div>
+                  </div>
+                  <div className="items">
+                    <div className="icon-wrapper">
+                      <i className="fa fa-map-marker"></i>
+                    </div>
+                    <div className="project-name">
+                      <p>VARIABLE OF LOCATIONS</p>
+                    </div>
+                  </div>
+                  <div className="items">
+                    <div className="icon-wrapper">
+                      <i className="fa fa-cog"></i>
+                    </div>
+                    <div className="project-name">
+                      <p>PROFESSIONAL SYSTEM</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div style={{ margin: "100px" }}>
+              {/* <div style={{ margin: "100px" }}>
                 <h2>Our Locations(not available)</h2>
                 <div>
                   <Location />
                 </div>
-              </div>
+              </div> */}
             </div>
           </Content>
-          <Footer style={{ background: "#383838" }}>
-            <div>
-              <h3>Codecamp Final Project ©2020 Created by zTamnaja</h3>
-            </div>
-          </Footer>
+          <Footer />
         </Layout>
       </div>
     );

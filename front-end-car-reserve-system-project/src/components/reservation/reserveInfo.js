@@ -103,8 +103,9 @@ class ReserveInfo extends Component {
       // );
       // console.log("reserved create:", newReserve);
 
+    await axios.post(`http://localhost:8000/Reservation`, body);
     await axios
-      .post(`http://localhost:8000/Reservation`, body)
+      .delete(`http://localhost:8000/Car/${body.carId}`)
       .then((result) => {
         console.log("result from sql:", result);
         this.props.history.push("/reservation/sucessful");
@@ -155,7 +156,8 @@ class ReserveInfo extends Component {
               <img
                 width={200}
                 alt="carSamplePic"
-                src="https://www.autoduqaan.com/images/no-image-big.jpg"
+                // src="https://www.autoduqaan.com/images/no-image-big.jpg"
+                src={this.state.carSelected.carImgSrc}
               />
             </div>
           </div>
@@ -182,7 +184,9 @@ class ReserveInfo extends Component {
 
           <br />
           <div className="eachElement">
-            <Button onClick={this.handleSubmit}>SUMMIT</Button>
+            <Button type="primary" onClick={this.handleSubmit}>
+              SUMMIT
+            </Button>
           </div>
           {/* </div> */}
         </div>

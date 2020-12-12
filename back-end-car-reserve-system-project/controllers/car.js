@@ -40,6 +40,7 @@ const createCar = async (req, res) => {
       carInfoGear,
       carInfoAC,
       carInfoRadio,
+      carImgSrc,
       // userId,
     } = req.body;
     console.log("req.body", req.body);
@@ -56,9 +57,10 @@ const createCar = async (req, res) => {
         carInfoGear: carInfoGear,
         carInfoAC: carInfoAC,
         carInfoRadio: carInfoRadio,
+        carImgSrc: carImgSrc,
         // userId: userId,
       },
-      {timestamps: false}
+      { timestamps: false }
     );
     console.log('newCar: ', newCar);
     // res.status(201).send(newCar)

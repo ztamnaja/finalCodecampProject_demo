@@ -36,6 +36,9 @@ module.exports = (sequelize, DataTypes) => {
       carInfoRadio: {
         type: DataTypes.STRING(64),
       },
+      carImgSrc: {
+        type: DataTypes.STRING(255),
+      },
     },
     {
       tableName: "Cars",

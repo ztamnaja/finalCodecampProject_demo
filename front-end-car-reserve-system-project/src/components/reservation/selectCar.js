@@ -73,55 +73,56 @@ class SelectCar extends Component {
     return (
       <div>
         <Navbar />
-      <div className="selectCarForm">
-        <Steps size="small" progressDot current={1}>
-          <Step
-            title="RESERVE A CAR"
-            // className="site-navigation-steps"
-            // type="navigation"
-            // size="small"
-            // current={current}
-            // onChange={this.onChange}
-          />
-          <Step title="SELECT A CAR" />
-          <Step title="YOUR INFOMATION" />
-        </Steps>
+        <div className="selectCarForm">
+          <Steps size="small" progressDot current={1}>
+            <Step
+              title="RESERVE A CAR"
+              // className="site-navigation-steps"
+              // type="navigation"
+              // size="small"
+              // current={current}
+              // onChange={this.onChange}
+            />
+            <Step title="SELECT A CAR" />
+            <Step title="YOUR INFOMATION" />
+          </Steps>
 
-        <div>
-          <Descriptions size="small" column={2}>
-            <div>
-              <Descriptions.Item>
-                Pick-up Location: {this.state.pickup_locationName}
-                <br />
-                {this.state.pickup_Date}, {this.state.pickup_Time}
-                <br />
-              </Descriptions.Item>
-            </div>
-            <div className="divisionLine">
-              <Descriptions.Item>
-                Return Location: {this.state.return_locationName}
-                <br />
-                {this.state.return_Date}, {this.state.return_Time}
-                <br />
-              </Descriptions.Item>
-            </div>
-          </Descriptions>
-        </div>
-        <List
-          className="demo-loadmore-list"
-          size="large"
-          itemLayout="horizontal"
-          dataSource={this.state.List}
-          header={<div></div>}
-          renderItem={(item) => (
-            <List.Item key={item.carId}>
-              {/* item.carImg */}
-              <img
-                width={200}
-                alt="carSamplePic"
-                src="https://www.autoduqaan.com/images/no-image-big.jpg"
-              />
-              {/* <List.Item.Meta
+          <div>
+            <Descriptions size="small" column={2}>
+              <div>
+                <Descriptions.Item>
+                  Pick-up Location: {this.state.pickup_locationName}
+                  <br />
+                  {this.state.pickup_Date}, {this.state.pickup_Time}
+                  <br />
+                </Descriptions.Item>
+              </div>
+              <div className="divisionLine">
+                <Descriptions.Item>
+                  Return Location: {this.state.return_locationName}
+                  <br />
+                  {this.state.return_Date}, {this.state.return_Time}
+                  <br />
+                </Descriptions.Item>
+              </div>
+            </Descriptions>
+          </div>
+          <List
+            className="demo-loadmore-list"
+            size="large"
+            itemLayout="horizontal"
+            dataSource={this.state.List}
+            header={<div></div>}
+            renderItem={(item) => (
+              <List.Item key={item.carId}>
+                {/* item.carImg */}
+                <img
+                  width={200}
+                  alt="carSamplePic"
+                  // src="https://www.autoduqaan.com/images/no-image-big.jpg"
+                  src={item.carImgSrc}
+                />
+                {/* <List.Item.Meta
                 itemLayout="horizontal"
                 className="eachElement"
                 title={item.carName}
@@ -136,35 +137,40 @@ class SelectCar extends Component {
                   </div>
                 }
               /> */}
-              <Statistic title={item.carBrandName} value={item.carName} />
-              <div>
-                <p>
-                  <ExportOutlined />
-                  Door: {item.carInfoDoor}{" "}
-                </p>
+                <Statistic title={item.carBrandName} value={item.carName} />
+                <div>
+                  <p>
+                    <ExportOutlined />
+                    Door: {item.carInfoDoor}{" "}
+                  </p>
 
-                <p>
-                  <UserOutlined />
-                  Seat: {item.carInfoSeat}
-                </p>
-                <p>
-                  <ShoppingFilled />
-                  Bag: {item.carInfoBags}
-                </p>
-              </div>
+                  <p>
+                    <UserOutlined />
+                    Seat: {item.carInfoSeat}
+                  </p>
+                  <p>
+                    <ShoppingFilled />
+                    Bag: {item.carInfoBags}
+                  </p>
+                </div>
 
-              <Statistic title="Price (THB)" prefix="฿" value={item.carPrice} />
-              <Button
-                value={item.carId}
-                style={{ marginTop: 28 }}
-                onClick={this.handleSubmit.bind(this)}
-              >
-                SELECT
-              </Button>
-            </List.Item>
-          )}
-        />
-      </div>
+                <Statistic
+                  title="Price (THB)"
+                  prefix="฿"
+                  value={item.carPrice}
+                />
+                <Button
+                  type="primary"
+                  value={item.carId}
+                  style={{ marginTop: 28 }}
+                  onClick={this.handleSubmit.bind(this)}
+                >
+                  SELECT
+                </Button>
+              </List.Item>
+            )}
+          />
+        </div>
       </div>
     );
   }
